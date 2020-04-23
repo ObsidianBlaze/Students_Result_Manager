@@ -54,6 +54,7 @@ if (isset($_POST['add'])) {
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
+
     $sql = "SELECT Passport FROM students WHERE  student_id=?";
     $stmt2 = $conn->prepare($sql);
     $stmt2->bind_param("i", $id);
@@ -64,12 +65,16 @@ if (isset($_GET['delete'])) {
     $imagepath = $row['Passport'];
     unlink($imagepath);
 
-
+    $query3 = "DELETE from studresult WHERE studentId=?";
+    $stmt3 = $conn->prepare($query3);
+    $stmt3->bind_param("i", $id);
+    $stmt3->execute();
 
     $query = "DELETE from students WHERE student_id=?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $id);
     $stmt->execute();
+
     //alert on homepage
     header('location:adminpage.php');
     $_SESSION['response'] = "Successfully Deleted!";
