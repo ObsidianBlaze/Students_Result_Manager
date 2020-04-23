@@ -30,16 +30,21 @@ require "session.php";
 
 <body>
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <img src="images/tttyu.png">
 
         <a class="navbar-brand" href="#">STELL-NEL INFORMATION SYSTEM</a>
 
         <!-- Toggler/collapsibe Button -->
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <a class="nav-link" href="parent.php">View Info</a>
+      <a class="nav-link" href="result.php">View Result</a>
+      <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" style="display: inline;">
+                <input type="submit" name="logout" id="logout" class="btn btn-primary" value="logout">
+      </form>
+
+    </button>
 
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -48,16 +53,18 @@ require "session.php";
                     <a class="nav-link" href="parent.php">View Info</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">View Result</a>
+                    <a class="nav-link" href="result.php">View Result</a>
                 </li>
+                
             </ul>
+            <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" style="display: inline;">
+                <input style="margin-left: 800%;" type="submit" name="logout" id="logout" class="btn btn-primary" value="logout">
+            </form>
         </div>
 
-        <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" style="display: inline;">
-            <input type="submit" name="logout" id="logout" class="btn btn-primary" value="logout">
-        </form>
         <?php require "logout.php" ?>
     </nav>
+
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-10">

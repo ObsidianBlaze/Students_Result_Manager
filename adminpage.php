@@ -89,8 +89,9 @@ if ($passwords == "" && $usernames == "") {
           <div class="form-group">
             <label>Students Class</label>
             <select name="class">
+            <option value="Toddler">Toddler</option>
+            <option value="Nusery 1">Nusery 1</option>
               <option value="Prnusery">Pre Nursery</option>
-              <option value="Nusery 1">Nusery 1</option>
               <option value="Nusery 2">Nusery 2</option>
               <option value="Nusery 3">Nusery 3</option>
               <!--adding the separator-->
@@ -174,11 +175,20 @@ if ($passwords == "" && $usernames == "") {
                   <td><?= $row['ParentsNumber']; ?></td>
 
                   <td>
-                    <a href="adminpage.php?edit=<?= $row['student_id']; ?>" class="badge badge-success p-2">Edit</a>
+                    <a href="adminpage.php?edit=<?= $row['student_id']; ?>" class="badge badge-success p-2">Edit Record</a>
                   </td>
 
                   <td>
-                    <a href="action.php?delete=<?= $row['student_id']; ?>" class="badge badge-danger p-2" onclick="return confirm('Do you want to delete this Record?');">Delete</a>
+                    <a href="resultuploadui.php?result=<?= $row['student_id']; ?>" class="badge badge-primary p-2">Add Result</a>
+                  </td>
+                  <td>
+                    <a href="updateresult.php?updateresult=<?= $row['student_id']; ?>" class="badge badge-success p-2">Update Result</a>
+                  </td>
+                  <td>
+                    <a href="showResult.php?viewresult=<?= $row['student_id']; ?>" class="badge badge-dark p-2">View Result</a>
+                  </td>
+                  <td>
+                    <a href="action.php?delete=<?= $row['student_id']; ?>" class="badge badge-danger p-2" onclick="return confirm('Do you want to delete this Record?');">Delete Record</a>
                   </td>
 
                 </tr>

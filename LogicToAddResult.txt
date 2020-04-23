@@ -1,0 +1,3 @@
+--Creating a new table in the database.. Stell_nel
+table Result
+    columns (result_id, student_id, result)

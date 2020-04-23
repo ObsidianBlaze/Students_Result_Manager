@@ -43,7 +43,10 @@ session_start();
                             <input type="submit" name="submit" value="Login" class="btn float-right login_btn">
                         </div>
                     </form>
-                    <a id="back" href="http://stell-nel.com" style="font-size:80px;"></a>
+                    <!-- Going back to wordpress page -->
+                    <a id="back" href="http://stell-nel.com" style="font-size:50px;">
+                    <i class="fas fa-home"></i>
+                </a>
                 </div>
             </div>
         </div>
